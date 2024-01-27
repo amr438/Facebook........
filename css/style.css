@@ -1,0 +1,1196 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri&family=IBM+Plex+Sans+Arabic&family=Noto+Naskh+Arabic:wght@500&family=Open+Sans:wght@400;500&family=Ubuntu&family=Work+Sans:ital,wght@0,300;0,400;0,800;1,300;1,400;1,500;1,600;1,800&display=swap');
+:root {
+    --blue-color: #0075ff;
+    --blue-alt-color: #0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+    --black-color :#454545ec ;
+    --black-shadow-color: #3d3d3d;
+    --font-family: 'Noto Naskh Arabic'
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: sans-serif;
+    background-color: #eee;
+    overflow-x: hidden;
+}
+/* Start Header */
+/* Start Left-Section */
+.parent {
+    position: relative;
+    width: 100%;
+    background-color: blue;
+    z-index: 50;
+}
+header {
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 1px 1px 10px 4px #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header .Left-Section {
+    margin-left: 2rem;
+    padding: .5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 30%;
+}
+header .Left-Section input {
+    appearance: none;
+    position: absolute;
+
+}
+header .Left-Section input + label img ,
+header .Left-Section input + label i {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        transition: .3s;
+        cursor: pointer;
+        position: relative;
+    }
+
+    header .Left-Section input + label i:hover {
+        background-color: #ddd;
+    }
+    header .Left-Section input:checked + label i {
+        background-color: rgb(0 117 255 / 13%);
+        color: var(--blue-color);
+    } 
+    header .Left-Section input + label {
+        position: relative;
+        display: block;
+    }
+    header .Left-Section input + label > p {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        translate: -50%;
+        background-color: var(--black-color);
+        color: white;
+        font-family: var(--font-family);
+        box-shadow: 1px 1px 4px var(--black-shadow-color);
+        padding: 6px;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        z-index: -1;
+        opacity: 0;
+        transition: .3s;
+        
+    }
+    header .Left-Section input + label img:hover + p {
+        opacity: 1;
+        z-index: 999;
+        bottom: -45px;
+    }
+    header .Left-Section input + label i:hover + p {
+        opacity: 1;
+        z-index: 1;
+        bottom: -45px;
+    }
+    header .Left-Section .Notification input + label {
+        position: relative;
+    }
+    header .Left-Section .Notification input + label::before ,
+    header .Left-Section .Messenger input + label::before  {
+        content: "7";
+        position: absolute;
+        left: -3px;
+        top: 0px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--font-family);
+        background-color: var(--red-color);
+        color: white;
+        z-index: 1;
+    }
+    header .Left-Section .Messenger input + label::before {
+        content: "14";
+    }
+/* End Left-Section */
+/* Start Mid-Section */
+header .Mid-Section {
+        position: relative;
+        display: flex;
+        width: 40%;
+        padding-top: .8rem ;
+        gap: 0;
+        margin: 0 10px;
+        justify-content: space-between;
+    }
+    @media (max-width:710px) {
+        header .Mid-Section {
+            display: none;
+        }
+    }
+    header .Mid-Section > div > div  {
+        width: 120px;
+        height: 55px;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .2s;
+        cursor: pointer;
+        position: relative;
+        
+    }
+    @media (max-width:878px) {
+        header .Mid-Section > div > div {
+            width: 100px;
+        }
+    }
+    header .Mid-Section > div > div::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0;
+        background-color: var(--blue-color);
+        transition: .3s;
+        border-radius: 9px;
+    }
+    header .Mid-Section > div:nth-last-child(1) > div::before {
+        width: 100%;
+    }
+    header .Mid-Section > div > div:hover {
+        background-color: #eeeeee79;
+    }
+    header .Mid-Section > div > div:hover::before {
+        width: 100%;
+    }
+    header .Mid-Section > div {
+        position: relative;
+    }
+    header .Mid-Section > div > div + p {
+        position: absolute;
+        bottom: -100px;
+        left: 50%;
+        translate: -50%;
+        background-color: var(--black-color);
+        color: white;
+        font-family: var(--font-family);
+        box-shadow: 2px 2px 10px var(--black-shadow-color);
+        padding: 6px;
+        border-radius: 5px;
+        font-size: 1.6rem;
+        opacity: 0;
+        z-index: -1;
+        transition: .3s;
+        text-align: center;
+    }
+    header .Mid-Section > div:nth-last-child(1) > div + p {
+        width: 120px;
+    }
+    header .Mid-Section >  div > div:hover + p {
+        z-index: 9999999;
+        opacity: 1;
+        bottom: -45px;
+    }
+    header .Mid-Section > div > div i {
+        font-size: 1.8rem;
+        color: #888;
+    }
+    /* End Mid-Section */
+    /* Start Right-Section   */
+    .Right-Section {
+        width: 30%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 7px;
+        margin-left: 30px;
+    }
+    .Right-Section form {
+        position: relative;
+    }
+    .Right-Section form input {
+        width: 240px;
+        height: 40px;
+        border-radius: 15px;
+        border: none;
+        outline: none;
+        background-color: rgb(221 221 221 / 50%);
+        text-align: end;
+        padding:  15px 20px;
+        color: var(--black-color);
+        caret-color: var(--black-color);
+        font-size: 1.5rem;
+        padding-right: 30px;
+        transition: .3s;
+    }
+    @media (max-width:1115px) {
+        .Right-Section form input  {
+            display: none;
+        }
+    }
+    .Right-Section form input::placeholder {
+        color: var(--black-color);
+        font-size: 1.5rem;
+    }
+    .Right-Section form input:focus {
+        padding-right: 1rem;
+    }
+    .Right-Section form input:focus + i {
+        opacity: 0;
+        
+    }
+    .Right-Section form i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        translate: 0 -50%;
+        font-size: 1.4rem;
+        color: var(--black-color);
+        transition: .3s;
+
+    }
+    @media (max-width:1115px) {
+        .Right-Section form i  {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            transition: .3s;
+            cursor: pointer;
+        }
+    }
+    .Right-Section img {
+        width: 40px;
+        height: 40px;
+    }
+/* End Right-Section   */
+/* End Header */
+/* Start First-Section */
+.First-Section::-webkit-scrollbar {
+    background-color: white;
+    height: 50px;
+    width: 5px;
+}
+.First-Section::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+    height: 50px;
+}
+.First-Section {
+    width: 22.5%;
+    height: 100vh;
+    margin-top: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 8px;
+    overflow-y: scroll;
+    direction: rtl;
+    z-index: 10;
+}
+@media (max-width:1100px) {
+    .First-Section {
+        width: 28%;
+    }
+}
+@media (max-width:900px) {
+    .First-Section {
+        display: none;
+    }
+}
+/* Start Request */
+.First-Section .Requests {
+    position: relative;
+    margin-bottom: 20px;
+}
+.First-Section .Requests::before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    translate: -50% 0;
+    width: 100%;
+    height: 2px;
+    background-color: #88888844;
+}
+.First-Section .Requests .Title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.First-Section .Requests .Title span {
+    font-size: 1.8rem;
+    color: var(--blue-color);
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: .3s;
+    padding: 4px;
+    border-radius: 3px;
+}
+.First-Section .Requests .Title span:hover {
+    background-color: #ddd;
+}
+.First-Section .Requests .Title p {
+    font-size: 2rem;
+    color: var(--grey-color);
+    font-family: var(--font-family);
+}
+.First-Section .Requests .Box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+    transition: .3s;
+    cursor: pointer;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+.First-Section .Requests .Box:hover {
+    background-color: #dddddd63;
+}
+.First-Section .Requests .Box .name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+.First-Section .Requests .Box p {
+    text-align: end;
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    color: var(--black-shadow-color);
+}
+.First-Section .Requests .Box .btns {
+    margin-right: auto;
+    display: flex;
+    gap: 8px;
+}
+.First-Section .Requests .Box .btns .btn-1 {
+    width: 100px;
+    background-color: #dddddd8e;
+    height: 40px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-size: 1.7rem;
+    border-radius: 5px;
+    transition: .3s;
+}
+.First-Section .Requests .Box .btns .btn-1:hover {
+    background-color: #777777bb;
+    color: white;
+}
+.First-Section .Requests .Box .btns .btn-2 {
+    width: 100px;
+    background-color: var(--blue-color);
+    height: 40px;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family);
+    font-size: 1.7rem;
+    color: white;
+    transition: .3s;
+    border-radius: 5px;
+}
+.First-Section .Requests .Box .btns .btn-2:hover {
+    background-color: var(--blue-alt-color);
+}
+.Box  img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+/* End Request */
+/* Start Friend-Section */
+.First-Section .Friend {
+    padding-bottom: 40px;
+}
+.First-Section .Friend .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.First-Section .Friend .header div i {
+    font-size: 1.8rem;
+    margin: 0 10px;
+    color: var(--grey-color);
+    cursor: pointer;
+}
+.First-Section .Friend .header h3 {
+    font-size: 2rem;
+    font-family: var(--font-family);
+    font-weight: normal;
+    color: var(--grey-color);
+}
+.First-Section .Friend .box {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .3s;
+}
+.First-Section .Friend .box:hover {
+    background-color: #ddd;
+}
+.First-Section .Friend .box p {
+
+    font-size: 1.4rem;
+
+}
+
+.First-Section .Friend .box img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+}
+.First-Section .Friend .me div {
+    position: relative;
+}
+.First-Section .Friend .me div i {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+.First-Section .Friend .me div i:hover {
+    background-color: #ddd;
+}
+.First-Section .Friend .me div p {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    
+    background-color: var(--black-color);
+    color: white;
+    font-family: var(--font-family);
+    box-shadow: 1px 1px 4px var(--black-shadow-color);
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    z-index: -1;
+    opacity: 0;
+    transition: .3s;
+    width: 200px;
+    text-align: center;
+}
+.First-Section .Friend .me div i:hover + p {
+    opacity: 1;
+    z-index: 1;
+    bottom: -45px;
+}
+/* End Friend-Section */
+/* End First-Section */
+/* Start Second-Section */
+.Second-Section {
+    margin-left: 22.5%;
+    margin-right: 22.5%;
+    margin-top: 60px;
+    width: 55%;
+    padding: 20px;
+    overflow-x: hidden;
+    z-index: 14;
+}
+@media (max-width:1100px) {
+    .Second-Section {
+        margin-right: 0;
+        margin-left: 28%;
+        flex-grow: 1;
+        padding: 5px;
+    }
+}
+@media (max-width:900px) {
+    .Second-Section {
+        margin: 65px 0;
+    }
+} 
+/* Start Storyes */
+.Second-Section .Parent-Story::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+}
+.Second-Section .Parent-Story::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+}
+.Parent-Story {
+    overflow: auto;
+}
+.Second-Section .Storys  {
+    min-width: 600px;
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.Second-Section .Storys .photo  {
+    width: 200px;
+    height: 260px;
+    border: 2px solid var(--blue-color);
+    background-color: white;
+    border-radius: 13px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: .3s;
+}
+.Second-Section .Storys .photo:hover .scala {
+    scale: 1.2;
+}
+.Second-Section .Storys .photo .scala {
+    display: block;
+    position: relative;
+}
+.Second-Section .Storys .photo .cover {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background-color: rgb(69 69 69 / 15%);
+    transition: .4s;
+}
+.Second-Section .Storys .photo:hover .cover {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+.Second-Section .Storys .photo:hover p {
+    color: white;
+}
+.Second-Section .Storys .photo:hover::before {
+    height: 100%;
+}
+
+.Second-Section .Storys .photo p {
+    position: absolute;
+    bottom: 10px;
+    right: 5px ;
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+.Second-Section .Storys .photo  .scala {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+.Second-Section .Storys .photo .profile {
+    position: absolute;
+    z-index: 1;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    right: 10px;
+    top: 15px;
+    border: 3px solid var(--blue-color);
+}
+.Second-Section .Storys .photo:hover .private {
+    scale: 1.2;
+}
+.Second-Section .Storys .photo .private {
+    width: 100%;
+    height: 80%;
+    cursor: pointer;
+    transition: .3s;
+}
+/* .Second-Section .Storys .photo  .scala:hover {
+    scale: 1.2;
+} */
+
+.Second-Section .Storys .photo .plus {
+    background-color: var(--blue-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 3rem;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    translate: -50% -20px;
+    border: 2px solid white;
+}
+.Second-Section .Storys .photo .cre {
+    color: black;
+    font-family: var(--font-family);
+    font-size: 1.7rem;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    bottom: 4px;
+    }
+    /* End Storys */
+    /* Start Create */
+    .Second-Section .Create {
+        background-color: white;
+        width: 87%;
+        margin: 25px auto;
+        border-radius: 13px;
+        padding: 1rem 3rem;
+    }
+    @media (max-width:550px) {
+        .Second-Section .Create {
+            width: 100%;
+        }
+    }
+    .Second-Section .Create .head {
+        display: flex;
+        justify-content: end;
+        gap: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+    .Second-Section .Create .head input {
+        flex-grow: 1;
+        width: 90%;
+        border-radius: 10px;
+        text-align: end;
+        padding: 0 1rem;
+        outline: none;
+        border: none;
+        background-color: rgb(221 221 221 / 50%);
+    }
+    .Second-Section .Create .head input::placeholder {
+        font-family: var(--font-family);
+        font-size: 1.5rem;
+    }
+    .Second-Section .Create .head img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .Second-Section .Create .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .Second-Section .Create .main div {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        transition: .2s;
+        padding: 8px;
+        border-radius: 9px;
+        cursor: pointer;
+    }
+    @media (max-width:577px) {
+        .Second-Section .Create .main div {
+            padding: 2px;
+            gap: 2px;
+        } 
+    }
+    .Second-Section .Create .main div:hover {
+        background-color: #eee;
+    }
+
+    @media (max-width:450px) {
+        .Second-Section .Create .main div:nth-of-type(1) {
+            display: none;
+        }
+    }
+    .Second-Section .Create .main div p {
+        font-size: 1.6rem;
+        font-family: var(--font-family);
+    }
+
+    .Second-Section .Create .main div .ico1 {
+        color: var(--orange-color);
+        font-size: 1.8rem;
+    }
+    .Second-Section .Create .main div .ico2 {
+        color: var(--green-color);
+        font-size: 1.8rem;
+    }
+    .Second-Section .Create .main div .ico3 {
+        color: var(--red-color);
+        font-size: 1.8rem;
+    }
+    @media (max-width:577px) {
+        .Second-Section .Create .main div i {
+            font-size: 1.3rem;
+        }
+        .Second-Section .Create .main div p {
+            font-size: 1.3rem;
+        }
+    }
+    /* End Create */
+    /* Start Posts */
+    .Second-Section .Posts {
+        margin: 25px auto;
+        border-radius: 13px;
+        padding: 1rem 1rem;
+        background-color: white;
+        width: 87%;
+        direction: rtl;
+    }
+    @media (max-width:550px) {
+        .Second-Section .Posts{
+            width: 100%;
+        }
+    }
+    .Second-Section .Posts .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .Second-Section .Posts .head > i {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        transition: .3s;
+        cursor: pointer;
+    }
+    .Second-Section .Posts .head > i:hover {
+        background-color: #eee;
+    }
+    .Second-Section .Posts .head .info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+    .Second-Section .Posts .head .info .Name p {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        width: fit-content;
+        transition: .2s;
+        margin: 5px;
+    }
+    .Second-Section .Posts .head .info .Name p:hover {
+        text-decoration: underline;
+    }
+    .Second-Section .Posts .head .info .Name  i {
+        font-size: 1.3rem;
+        color: var(--black-color);
+    }
+    .Second-Section .Posts img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+    }
+    .Second-Section .Posts .Content {
+        border: 1px solid rgb(136 136 136 / 50%);
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .Second-Section .Posts .Content p {
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        cursor: pointer;
+        width: fit-content;
+        transition: .2s;
+        margin: 5px;
+    }
+    .Second-Section .Posts .Content p:hover {
+        text-decoration: underline;
+    }
+    .Second-Section .Posts .Content .heading .info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .Second-Section .Posts .Content .heading .info .Name i {
+        font-size: 1.3rem;
+        color: var(--black-color);
+    }
+    .Second-Section .Posts .Content .heading .info .Name {
+        padding: 0;
+        line-height: .7;
+    }
+    .Second-Section .Posts .Content .writing {
+        margin-top: 1.5rem;
+    }
+    .Second-Section .Posts .Content .writing p {
+        font-family: var(--font-family);
+    }
+    .Second-Section .Posts .Reacts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        direction: ltr;
+        margin-top: 15px;
+        padding: 0 10px;
+        border-bottom: 1px solid rgb(136 136 136 / 50%);
+        padding-bottom: 10px;
+    }
+    .Second-Section .Posts .Reacts i {
+        font-size: 1.7rem;
+        color: var(--grey-color);
+    }
+    .Second-Section .Posts .Reacts div {
+        display: flex;
+        align-items: center;
+    }
+    .Second-Section .Posts .Reacts div span {
+        margin-right: 5px;
+        font-size: 1.4rem;
+    }
+    .Second-Section .Posts .Reacts img {
+        width: 20px;
+        height: 20px;
+    }
+    .Second-Section .Posts .Likes {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        direction: ltr;
+        padding: 4px 8px;
+        border-bottom: 1px solid rgb(136 136 136 / 50%);
+        margin-bottom: 8px;
+    }
+    .Second-Section .Posts .Likes div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 30%;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 6px;
+        transition: .3s;
+    }
+    .Second-Section .Posts .Likes .view {
+        position: relative;
+    }
+
+    .Second-Section .Posts .Likes .view .All-Reacts {
+
+        background-color: white;
+        padding: 4px 5px;
+        border-radius: 40px;
+        display: flex;
+        justify-content: start;
+        direction: rtl;
+        border: 2px solid rgb(136 136 136 / 50%);
+        box-shadow: 1px 1px 4px 0 var(--black-shadow-color);
+        opacity: 0;
+        z-index: -1;
+        transition: 1s;
+        width: 0;
+        position: absolute;
+        right: 0;
+        top: -55px;
+        
+    }
+    .Second-Section .Posts .Likes .view .All-Reacts section {
+        position: relative;
+        display: block;
+    }
+    .Second-Section .Posts .Likes .view .All-Reacts section p {
+        position: absolute;
+        top: -200px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--black-color);
+        box-shadow: 1px 1px 5px var(--black-shadow-color);
+        padding: 5px;
+        font-family: var(--font-family);
+        font-size: 1.6rem;
+        color: white;
+        border-radius: 8px;
+        opacity: 0;
+        z-index: -1;
+        transition: .3s;
+    }
+    .Second-Section .Posts .Likes .view .All-Reacts section:hover p {
+        opacity: 1;
+        z-index: 1;
+        top: -55px;
+    }
+    .Second-Section .Posts .Likes .view:hover .All-Reacts {
+        z-index: 1;
+        opacity: 1;
+        width: 330px;
+
+    }
+    .Second-Section .Posts .Likes .view .All-Reacts img {
+        width: 40px;
+        height: 40px;
+        transition: .6s;
+
+
+    }
+
+    .Second-Section .Posts .Likes .view .All-Reacts img:hover {
+        scale: 1.3;
+        rotate: 1turn;
+    }
+    .Second-Section .Posts .Likes div:hover {
+        background-color: #Eee;
+    }
+    .Second-Section .Posts .Likes div p {
+        font-size: 1.8rem;
+        font-family: var(--font-family);
+    }
+    .Second-Section .Posts .Likes div i {
+        font-size: 1.8rem;
+        color: var(--grey-color);
+        margin: 0 5px;
+    }
+    .Second-Section .Posts .Comment {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+    }
+    .Second-Section .Posts .Comment form {
+        flex-grow: 1;
+        position: relative;
+    }
+    .Second-Section .Posts .Comment form i {
+        position: absolute;
+        font-size: 14px;
+        z-index: 22;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .Second-Section .Posts .Comment form i:hover {
+        background-color:rgb(0 117 255 / 20%);
+    }
+    .Second-Section .Posts .Comment form .ico1 {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: 100px;
+
+    }
+    .Second-Section .Posts .Comment form .ico2 {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: 70px;
+    }
+    .Second-Section .Posts .Comment form .ico3 {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: 40px;
+    }
+    .Second-Section .Posts .Comment form span {
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: 7px;
+        font-size: 14px;
+        z-index: 22;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .Second-Section .Posts .Comment form span:hover {
+        background-color:rgb(0 117 255 / 20%);       
+    }
+    .Second-Section .Posts .Comment form input {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 13px 10px;
+        border-radius: 15px;
+        background-color: rgb(221 221 221 / 50%);
+    }
+    .Second-Section .Posts .Comment form input::placeholder {
+        font-size: 1.7rem;
+        font-family: var(--font-family);
+    }
+    .Second-Section .Posts .Comment img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    /* End Posts */
+/* End Second-Section */
+/* Start Last-Section */
+.Container {
+    display: flex;
+    position: relative;
+}
+
+.Last-Section {
+    width: 22.5%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px 8px;
+    overflow-y: scroll;
+    margin-top: 65px;
+    direction: rtl;
+    padding-bottom: 80px;
+}
+.Last-Section::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background-color: white;
+} 
+.Last-Section::-webkit-scrollbar-thumb {
+    background-color: var(--blue-color);
+}
+@media (max-width:1100px) {
+    .Last-Section {
+        display: none;
+    }
+}
+.Last-Section div {
+    display: flex;
+    padding: 6px;
+    border-radius: 5px;
+    align-items: center;
+    gap: 5px;
+    transition: .3s;
+    cursor: pointer;
+    margin: 5px 0;
+}
+.Last-Section div i {
+    font-size: 1.8rem;
+
+}
+.Last-Section div .i-Friend {
+    color: var(--blue-color);
+}
+.Last-Section div .i-Saved {
+    color: rgb(143, 0, 172);
+}
+.Last-Section div .i-memory {
+    color: var(--blue-color);
+    background-color: white;
+    border-radius: 50%;
+}
+.Last-Section div .i-group {
+    background-color: var(--blue-color);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+.Last-Section div .i-video {
+    color: var(--blue-color);
+}
+.Last-Section div .i-messenger {
+    color: var(--blue-color);
+}
+.Last-Section div .i-line {
+    color: var(--blue-color);
+}
+.Last-Section div .i-pages {
+    color: var(--green-color);
+} 
+.Last-Section div .i-Requests {
+    color: var(--black-color);
+}
+.Last-Section div .i-Party {
+    color: var(--red-color);
+}
+.Last-Section div .i-Lists {
+    color: var(--blue-color);
+}
+.Last-Section div .i-Money {
+    color: var(--orange-color);
+}
+.Last-Section div .i-Play-Games {
+    color: var(--blue-color);
+}
+.Last-Section div .fa-money-bill-wave {
+    color: var(--blue-color);
+}
+.Last-Section div .fa-cloud-bolt {
+    color: var(--blue-color);
+}
+.Last-Section div .fa-clapperboard {
+    color: var(--blue-color);
+}
+.Last-Section div:hover {
+    background-color: #ddd;
+}
+.Last-Section div p {
+    font-size: 1.8rem;
+    font-family: var(--font-family);
+}
+.Last-Section div img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+/* End Last-Section */
+
+
+
